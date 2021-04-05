@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.TopicsFragment">
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/ic_triangle"
+            app:layout_constraintBottom_toBottomOf="@+id/chapter_name"
+            app:layout_constraintEnd_toEndOf="@+id/chapter_name"
+            app:layout_constraintStart_toStartOf="@+id/chapter_name"
+            app:layout_constraintTop_toTopOf="@+id/chapter_name"
+            app:layout_constraintVertical_bias="0.64" />
+
+        <TextView
+            android:id="@+id/chapter_name"
+            style="@style/TextWhite.large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07999998"
+            tools:text="Chapter" />
+
+        <TextView
+            android:id="@+id/chapter_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="id" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topics"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chapter_name"
+            tools:listitem="@layout/item_topic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

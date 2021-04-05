@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey">#6A6A6A</color>
+    <color name="view">#D6D6D6</color>
+    <color name="primary">#43A047</color>
+    <color name="green_dark">#D4E157</color>
+    <color name="green_light">#8FC965</color>
+    <color name="secondary">#F9C811</color>
+    <color name="semi_transparent">#D5000000</color>
+    <color name="red">@color/quantum_googred500</color>
+
+
+</resources>

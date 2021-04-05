@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ChaptersFragment">
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/ic_triangle"
+            app:layout_constraintBottom_toBottomOf="@+id/subject_name"
+            app:layout_constraintEnd_toEndOf="@+id/subject_name"
+            app:layout_constraintStart_toStartOf="@+id/subject_name"
+            app:layout_constraintTop_toTopOf="@+id/subject_name"
+            app:layout_constraintVertical_bias="0.64" />
+
+        <TextView
+            android:id="@+id/subject_name"
+            style="@style/TextWhite.elarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:text="Motion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subject_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chapters"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subject_name"
+            tools:listitem="@layout/item_chapter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

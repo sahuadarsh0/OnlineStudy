@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".test.TestResultDashboardFragment">
+
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/ic_triangle"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/textView8"
+            app:layout_constraintVertical_bias="0.64" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/TextBlack.elarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:text="Results"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.db.williamchart.view.BarChartView
+            android:id="@+id/chart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:chart_axis="x"
+            app:chart_barsBackgroundColor="#EBEBEB"
+            app:chart_barsColor="#3C3A3A"
+            app:chart_gridEffect="solid"
+            app:chart_labelsColor="#191B1A"
+            app:chart_labelsSize="10sp"
+            app:chart_lineColor="#ffffff"
+            app:chart_lineThickness="3dp"
+            app:chart_smoothLine="true"
+            app:chart_spacing="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/lineChartValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:text="0"
+            android:textColor="#FF70977F"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/chart"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/totalRightMarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="total right marks"
+            android:textColor="#25693F"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/chart"
+            app:layout_constraintTop_toBottomOf="@+id/chart" />
+
+        <TextView
+            android:id="@+id/totalWrongMarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="total wrong marks"
+            android:textColor="#25693F"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/chart"
+            app:layout_constraintTop_toBottomOf="@+id/totalRightMarks" />
+
+        <TextView
+            android:id="@+id/obtainedMarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="obtained marks"
+            android:textColor="#25693F"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/chart"
+            app:layout_constraintTop_toBottomOf="@+id/totalWrongMarks" />
+
+
+        <Button
+            android:id="@+id/view_questions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/green_light"
+            android:padding="10dp"
+            android:text="View Questions"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view_answers"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/obtainedMarks"
+            app:layout_constraintVertical_bias="0.26" />
+
+        <Button
+            android:id="@+id/view_answers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green_light"
+            android:padding="10dp"
+            android:text="View Answers"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_questions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view_questions"
+            app:layout_constraintTop_toTopOf="@+id/view_questions" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

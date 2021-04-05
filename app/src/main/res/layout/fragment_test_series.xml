@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".test.TestHomeFragment">
+
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/ic_triangle"
+                app:layout_constraintBottom_toBottomOf="@+id/test_series_name"
+                app:layout_constraintStart_toStartOf="@+id/test_series_name"
+                app:layout_constraintTop_toTopOf="@+id/test_series_name"
+                app:layout_constraintVertical_bias="0.64" />
+
+            <TextView
+                android:id="@+id/test_series_name"
+                style="@style/TextBlack.elarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Test Series" />
+
+
+            <ImageView
+                android:id="@+id/test_series_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_triangle"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/test_series_name" />
+
+            <TextView
+                android:id="@+id/test_description"
+                style="@style/TextBlack.small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/test_series_image"
+                app:layout_constraintStart_toStartOf="@+id/test_series_image"
+                app:layout_constraintTop_toBottomOf="@+id/test_series_image"
+                tools:text="@tools:sample/backgrounds/scenic" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_exams"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="400dp"
+                android:layout_marginBottom="32dp"
+                android:clipToPadding="true"
+                android:paddingHorizontal="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/test_description"
+                tools:listitem="@layout/item_exam" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

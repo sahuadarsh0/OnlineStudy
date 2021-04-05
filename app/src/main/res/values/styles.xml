@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/linotte_regular</item>
+    </style>
+
+
+    <style name="TextGrey">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextBlack">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <style name="TextWhite">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">5</item>
+    </style>
+
+    <style name="TextGrey.small">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextGrey.medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextGrey.large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextBlack.small">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextBlack.medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextBlack.large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextBlack.elarge">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextGrey.elarge">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextWhite.elarge">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextWhite.large">
+        <item name="android:textSize">22sp</item></style>
+
+
+</resources>

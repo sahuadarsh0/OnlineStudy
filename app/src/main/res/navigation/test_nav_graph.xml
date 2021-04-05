@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test_nav_graph"
+    app:startDestination="@id/nav_info">
+    <fragment
+        android:id="@+id/nav_test"
+        android:name="com.techipinfotech.onlinestudy1.test.TestHomeFragment"
+        android:label="fragment_test_home"
+        tools:layout="@layout/fragment_test_home">
+        <action
+            android:id="@+id/action_nav_test_to_testSeriesFragment"
+            app:destination="@id/testSeriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.techipinfotech.onlinestudy1.test.TestInfoFragment"
+        android:label="fragment_test_info"
+        tools:layout="@layout/fragment_test_info" />
+    <fragment
+        android:id="@+id/testSeriesFragment"
+        android:name="com.techipinfotech.onlinestudy1.test.TestSeriesFragment"
+        android:label="TestSeriesFragment"
+        tools:layout="@layout/fragment_test_series">
+        <argument
+            android:name="testSeries"
+            app:argType="com.techipinfotech.onlinestudy1.model.TestSeriesItem" />
+        <action
+            android:id="@+id/action_testSeriesFragment_to_examActivity"
+            app:destination="@id/examActivity" />
+        <action
+            android:id="@+id/action_testSeriesFragment_to_testResultDashboardFragment"
+            app:destination="@id/testResultDashboardFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/examActivity"
+        android:name="com.techipinfotech.onlinestudy1.ExamActivity"
+        android:label="activity_exam"
+        tools:layout="@layout/activity_exam">
+        <argument
+            android:name="exam"
+            app:argType="com.techipinfotech.onlinestudy1.model.ExamsItem" />
+    </activity>
+    <fragment
+        android:id="@+id/nav_result"
+        android:name="com.techipinfotech.onlinestudy1.test.TestResultFragment"
+        android:label="TestResultFragment"
+        tools:layout="@layout/fragment_test_result">
+        <action
+            android:id="@+id/action_nav_result_to_testSeriesFragment"
+            app:destination="@id/testSeriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testResultDashboardFragment"
+        android:name="com.techipinfotech.onlinestudy1.test.TestResultDashboardFragment"
+        android:label="TestResultDashboardFragment"
+        tools:layout="@layout/fragment_test_result_dashboard">
+        <argument
+            android:name="result"
+            app:argType="com.techipinfotech.onlinestudy1.model.ResultItem" />
+        <action
+            android:id="@+id/action_testResultDashboardFragment_to_webSiteActivity"
+            app:destination="@id/webSiteActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/webSiteActivity"
+        android:name="com.techipinfotech.onlinestudy1.WebSiteActivity"
+        android:label="WebSiteActivity"
+        tools:layout="@layout/activity_web_view">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </activity>
+</navigation>

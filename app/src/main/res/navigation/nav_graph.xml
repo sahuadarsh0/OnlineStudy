@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.techipinfotech.onlinestudy1.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_subjectsFragment"
+            app:destination="@id/subjectsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_nav_home_to_onlineTestActivity2"
+            app:destination="@id/onlineTestActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.techipinfotech.onlinestudy1.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="com.techipinfotech.onlinestudy1.ui.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/chaptersFragment"
+        android:name="com.techipinfotech.onlinestudy1.ui.ChaptersFragment"
+        android:label="fragment_chapters"
+        tools:layout="@layout/fragment_chapters">
+        <action
+            android:id="@+id/action_chaptersFragment_to_topicsFragment"
+            app:destination="@id/topicsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="subjects"
+            app:argType="com.techipinfotech.onlinestudy1.model.SubjectsItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/topicsFragment"
+        android:name="com.techipinfotech.onlinestudy1.ui.TopicsFragment"
+        android:label="fragment_topics"
+        tools:layout="@layout/fragment_topics">
+        <argument
+            android:name="chapters"
+            app:argType="com.techipinfotech.onlinestudy1.model.ChaptersItem" />
+        <action
+            android:id="@+id/action_topicsFragment_to_contentFragment"
+            app:destination="@id/contentFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <activity
+        android:id="@+id/play"
+        android:name="com.techipinfotech.onlinestudy1.Play"
+        android:label="activity_play"
+        tools:layout="@layout/activity_play">
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="materialId"
+            app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.techipinfotech.onlinestudy1.WebViewActivity"
+        android:label="activity_web_view"
+        tools:layout="@layout/activity_web_view">
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="materialId"
+            app:argType="string" />
+    </activity>
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="com.techipinfotech.onlinestudy1.ui.ContentFragment"
+        android:label="fragment_content"
+        tools:layout="@layout/fragment_content">
+        <action
+            android:id="@+id/action_contentFragment_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+        <action
+            android:id="@+id/action_contentFragment_to_play"
+            app:destination="@id/play" />
+        <argument
+            android:name="topics"
+            app:argType="com.techipinfotech.onlinestudy1.model.TopicsItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="com.techipinfotech.onlinestudy1.ui.SubjectsFragment"
+        android:label="SubjectsFragment"
+        tools:layout="@layout/fragment_subjects">
+        <action
+            android:id="@+id/action_subjectsFragment_to_chaptersFragment"
+            app:destination="@id/chaptersFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <activity
+        android:id="@+id/onlineTestActivity2"
+        android:name="com.techipinfotech.onlinestudy1.OnlineTestActivity"
+        android:label="OnlineTestActivity"
+        tools:layout="@layout/activity_online_test" />
+
+</navigation>
