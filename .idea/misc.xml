@@ -8,8 +8,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Important_Docs/Projects/Backup/OnlineStudy1/app/src/main/res/drawable/bg_edit_text.xml" value="0.20277777777777778" />
+        <entry key="..\:/Important_Docs/Projects/Backup/OnlineStudy1/app/src/main/res/drawable/ic_atom.xml" value="0.20277777777777778" />
         <entry key="..\:/Important_Docs/Projects/Backup/OnlineStudy1/app/src/main/res/layout/activity_main.xml" value="0.23518090839107006" />
         <entry key="..\:/Important_Docs/Projects/Backup/OnlineStudy1/app/src/main/res/layout/fragment_test_home.xml" value="0.23518090839107006" />
+        <entry key="..\:/Important_Docs/Projects/Backup/OnlineStudy1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20277777777777778" />
       </map>
     </option>
   </component>

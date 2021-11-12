@@ -14,7 +14,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
-import com.rezwan.knetworklib.KNetwork
 import com.techipinfotech.onlinestudy1.databinding.ActivityExamBinding
 import com.techipinfotech.onlinestudy1.db.QuestionDbHelper
 import com.techipinfotech.onlinestudy1.model.AnswersItem
@@ -30,7 +29,7 @@ import java.text.NumberFormat
 import java.util.*
 
 
-class ExamActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener {
+class ExamActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityExamBinding
     private lateinit var processDialog: ProcessDialog
@@ -58,9 +57,6 @@ class ExamActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
         binding = DataBindingUtil.setContentView(this, R.layout.activity_exam)
         processDialog = ProcessDialog(this)
 //        processDialog.show()
-        KNetwork.bind(this, lifecycle)
-            .showKNDialog(false)
-            .setConnectivityListener(this)
 
         userSharedPreferences = SharedPrefs(this, "USER")
         testSharedPreferences = SharedPrefs(this, "TEST")
@@ -488,23 +484,6 @@ class ExamActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
 
             }
         })
-    }
-
-    override fun onNetConnected() {
-    }
-
-    override fun onNetDisConnected() {
-        finish()
-        Toast.makeText(this@ExamActivity, "Internet Error ! Slow Network", Toast.LENGTH_SHORT)
-            .show()
-
-    }
-
-    override fun onNetError(msg: String?) {
-        finish()
-        Toast.makeText(this@ExamActivity, "Internet Error ! Slow Network", Toast.LENGTH_SHORT)
-            .show()
-
     }
 
     override fun onBackPressed() {

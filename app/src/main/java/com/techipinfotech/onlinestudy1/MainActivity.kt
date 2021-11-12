@@ -11,8 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.rezwan.knetworklib.KNetwork
-import com.rezwan.knetworklib.KNetwork.bind
 import com.techipinfotech.onlinestudy1.databinding.ActivityMainBinding
 import com.techipinfotech.onlinestudy1.model.JSONResponse
 import retrofit2.Call
@@ -22,7 +20,7 @@ import technited.minds.androidutils.MD.alert
 import technited.minds.androidutils.ProcessDialog
 import technited.minds.androidutils.SharedPrefs
 
-class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var processDialog: ProcessDialog
@@ -41,9 +39,6 @@ class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         processDialog = ProcessDialog(this)
         processDialog.show()
-        bind(this, lifecycle)
-            .showKNDialog(false)
-            .setConnectivityListener(this)
 
         userSharedPreferences = SharedPrefs(this, "USER")
 
@@ -100,16 +95,6 @@ class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
     private fun setBottomNavMenu(navController: NavController) {
         binding.bottomNavigation.let { NavigationUI.setupWithNavController(it, navController) }
     }
-
-    override fun onNetConnected() {
-    }
-
-    override fun onNetDisConnected() {
-    }
-
-    override fun onNetError(msg: String?) {
-    }
-
 
     override fun onBackPressed() {
         if (navController.graph.startDestination == navController.currentDestination!!.id) {

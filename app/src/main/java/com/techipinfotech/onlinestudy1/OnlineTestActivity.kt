@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.rezwan.knetworklib.KNetwork
 import com.techipinfotech.onlinestudy1.databinding.ActivityOnlineTestBinding
 import com.techipinfotech.onlinestudy1.model.TestResponse
 import retrofit2.Call
@@ -20,7 +19,7 @@ import retrofit2.Response
 import technited.minds.androidutils.ProcessDialog
 import technited.minds.androidutils.SharedPrefs
 
-class OnlineTestActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener {
+class OnlineTestActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityOnlineTestBinding
     private lateinit var processDialog: ProcessDialog
@@ -40,10 +39,6 @@ class OnlineTestActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityLi
         viewModel = ViewModelProvider(this).get(OnlineTestActivityViewModel::class.java)
 
         processDialog = ProcessDialog(this)
-        KNetwork.bind(this, lifecycle)
-            .showKNDialog(false)
-            .setConnectivityListener(this)
-
         userSharedPreferences = SharedPrefs(this, "USER")
         testSharedPreferences = SharedPrefs(this, "TEST")
 
@@ -63,19 +58,6 @@ class OnlineTestActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityLi
 
     private fun setBottomNavMenu(navController: NavController) {
         binding.bottomNavigation.let { NavigationUI.setupWithNavController(it, navController) }
-    }
-
-    override fun onNetConnected() {
-
-    }
-
-    override fun onNetDisConnected() {
-        Toast.makeText(this, "Internet Disconnected Exam Over", Toast.LENGTH_LONG).show()
-        finish()
-    }
-
-    override fun onNetError(msg: String?) {
-
     }
 
     override fun onBackPressed() {

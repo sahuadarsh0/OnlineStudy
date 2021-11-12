@@ -4,7 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 public enum API {
 
-        URL("http://pragatiinstitute.co.in/app/"),
+        URL("http://drmitraapp.aicpnews.in/"),
+//        URL("http://pragatiinstitute.co.in/app/"),
 //    URL("http://pragati.techipinfotech.com/"),
 //    URL("http://192.168.29.204:8m2/pragatiapp/"),
 

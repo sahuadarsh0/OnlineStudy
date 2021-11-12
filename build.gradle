@@ -1,21 +1,32 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.20"
+    ext {
+        kotlin_version = "1.5.30-RC"
+        lifecycle_version = '2.4.0-alpha02'
+        nav_version = '2.3.5'
+        room_version = '2.3.0'
+        hilt_version = '2.38.1'
+        coroutines_android_version = '1.5.1-native-mt'
+    }
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+//        jcenter()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30-RC"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
-        classpath 'com.google.gms:google-services:4.3.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-
-
-        def nav_version = "2.3.0-beta01"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 }
 
@@ -23,7 +34,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://dl.bintray.com/rrsaikat/RNetwork' }
+//        maven { url 'https://dl.bintray.com/rrsaikat/RNetwork' }
         maven { url 'https://jitpack.io' }
 
     }
