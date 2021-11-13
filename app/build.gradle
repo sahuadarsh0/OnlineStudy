@@ -38,19 +38,23 @@ android {
         jvmTarget = '1.8'
     }
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
+        viewBinding true
     }
 
 }
 
 dependencies {
+//  LifeCycle
+    def lifecycle_version = "2.4.0"
 
-    def lifecycle_version = '2.4.0'
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+//  ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+//  LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -62,32 +66,47 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'com.google.android.material:material:1.4.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "androidx.core:core-ktx:1.7.0"
 
 
+    // Room SQLite
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+//     Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+//    Network
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
     implementation 'org.parceler:parceler-api:1.1.13'
     kapt 'org.parceler:parceler:1.1.13'
-
-
-//    implementation 'com.rezwan.knetworklib:knetworklib:1.0.3'
     implementation 'com.ramotion.paperonboarding:paper-onboarding:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
-
-
-//    implementation 'technited.minds:android-utils:0.0.2'
     implementation project(path: ':android-utils')
 
+//  Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_android_version"
+
+
+    // Other Library
     implementation 'com.github.PierfrancescoSoffritti.android-youtube-player:core:10.0.5'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.diogobernardino:williamchart:3.11.0'
     implementation 'com.diogobernardino.williamchart:tooltip-slider:3.11.0'
+    implementation "com.airbnb.android:lottie:4.2.0"
+    implementation 'com.eightbitlab:blurview:1.6.6'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 }

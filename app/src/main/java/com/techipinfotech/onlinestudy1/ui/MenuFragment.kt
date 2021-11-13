@@ -37,8 +37,8 @@ class MenuFragment : Fragment() {
             try {
                 val whatsAppRoot = "http://api.whatsapp.com/"
                 val number =
-                    "send?phone=+919644200007" //here the mobile number with its international prefix
-                val text = "&text=Hi Pragati Institute support team !!! I need help in "
+                    "send?phone=+918770162862" //here the mobile number with its international prefix
+                val text = "&text=Hi MMA support team !!! I need help in "
                 val uri = whatsAppRoot + number + text
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse(uri)
