@@ -73,6 +73,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/di/AppModule.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/ui/MenuFragment.kt">
           <value>
             <set />
