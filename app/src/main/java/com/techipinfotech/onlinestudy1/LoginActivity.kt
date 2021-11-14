@@ -63,7 +63,10 @@ class LoginActivity : AppCompatActivity() {
             }
             animation = AnimationUtils.loadAnimation(this@LoginActivity, R.anim.fade_in)
             triangle.startAnimation(animation)
-
+            demoButton.setOnClickListener {
+                val intent = Intent(this@LoginActivity, DemoActivity::class.java)
+                startActivity(intent)
+            }
         }
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -146,8 +149,7 @@ class LoginActivity : AppCompatActivity() {
                             received.studentData?.studentEmail
                         )
                         userSharedPreferences.set(
-                            "admission_date",
-                            received.studentData?.addmissionDate
+                            "admission_date", received.studentData?.addmissionDate
                         )
                         userSharedPreferences.set(
                             "admission_last_date",

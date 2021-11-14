@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DemoActivity"
+            android:exported="true" />
+        <activity
             android:name=".ExamActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -40,12 +43,16 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".PlayDemo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".intro.WelcomeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

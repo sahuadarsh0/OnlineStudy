@@ -14,6 +14,4 @@
     <color name="secondary">#F9C811</color>
     <color name="semi_transparent">#D5000000</color>
     <color name="red">@color/quantum_googred500</color>
-
-
 </resources>

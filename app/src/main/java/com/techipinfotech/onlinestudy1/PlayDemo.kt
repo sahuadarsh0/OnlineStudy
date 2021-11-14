@@ -5,20 +5,15 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.navArgs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.techipinfotech.onlinestudy1.databinding.ActivityPlayBinding
-import technited.minds.androidutils.SharedPrefs
 
 
-class Play : AppCompatActivity() {
+class PlayDemo : AppCompatActivity() {
     private lateinit var videoUrl: String
-    private lateinit var materialId: String
-
-    private lateinit var userSharedPreferences: SharedPrefs
     private lateinit var youTubePlayerView: YouTubePlayerView
     private lateinit var binding: ActivityPlayBinding
 
@@ -34,11 +29,7 @@ class Play : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_play)
         youTubePlayerView = findViewById(R.id.youtube)
         this.lifecycle.addObserver(youTubePlayerView)
-
-        userSharedPreferences = SharedPrefs(this, "USER")
-        val args: PlayArgs by navArgs()
-        videoUrl = args.url
-        materialId = args.materialId
+        videoUrl = intent.getStringExtra("url")!!
 
         youTubePlayerView.enterFullScreen();
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
@@ -47,13 +38,6 @@ class Play : AppCompatActivity() {
                 super.onReady(youTubePlayer)
                 youTubePlayer.loadVideo(videoUrl, 0F)
                 youTubePlayer.play()
-
-//                Viewed.materialViewed(
-//                    this@Play,
-//                    userSharedPreferences.get("student_mobile"),
-//                    materialId
-//                )
-
                 youTubePlayer.addListener(object : AbstractYouTubePlayerListener() {
                     override fun onStateChange(
                         youTubePlayer: YouTubePlayer,
@@ -62,11 +46,7 @@ class Play : AppCompatActivity() {
                         super.onStateChange(youTubePlayer, state)
 
                         if (state == PlayerConstants.PlayerState.ENDED) {
-                            Viewed.materialViewed(
-                                this@Play,
-                                userSharedPreferences.get("student_mobile"),
-                                materialId
-                            )
+                            finish()
                         }
 
                     }
@@ -79,13 +59,8 @@ class Play : AppCompatActivity() {
                         super.onStateChange(youTubePlayer, state)
 
                         if (state == PlayerConstants.PlayerState.ENDED) {
-                            Viewed.materialViewed(
-                                this@Play,
-                                userSharedPreferences.get("student_mobile"),
-                                materialId
-                            )
+                            finish()
                         }
-
                     }
                 })
             }
