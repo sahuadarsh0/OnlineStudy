@@ -21,7 +21,6 @@ class HomeApi {
 
     public static final String base_url = API.HOME_URL.toString();
 
-
     private static ApiService apiService = null;
 
     static ApiService getApiService() {
@@ -62,10 +61,8 @@ class HomeApi {
         @GET
         Call<ResponseBody> downloadPDF(@Url String fileUrl);
 
-  
+
     }
-
-
 
 }
 

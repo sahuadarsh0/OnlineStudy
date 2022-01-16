@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../BobbtheBuilder/app/src/main/java/technited/minds/bobbthebuilder/ApiService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../FastIndiaRider/app/src/main/java/sdr/tecqza/homedelivery_deliveryboy/LoginActivity.kt">
           <value>
             <set />
@@ -28,12 +33,72 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/PaymentPage.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/gallery/GalleryFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/app_bar_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_blogs.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_gallery.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_home.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_live_class.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_notes.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_packages.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_test_series.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_test_series_type.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/menu/bottom_nav_menu.xml">
           <value>
             <set />
           </value>
@@ -93,6 +158,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/HomeApi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/LoginActivity.kt">
           <value>
             <set />
@@ -118,7 +188,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/Service.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/SplashActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/Viewed.kt">
           <value>
             <set />
           </value>
