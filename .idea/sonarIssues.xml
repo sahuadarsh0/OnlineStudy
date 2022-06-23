@@ -23,7 +23,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/data/remote/RemoteDataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/data/remote/Service.kt">
           <value>
             <set />
           </value>
@@ -43,12 +53,92 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/Play.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/PlayNComments.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/adapters/CoursesAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/blogs/BlogsFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/courses/CourseDetails.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/courses/CoursesFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/courses/CoursesViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/courses/PackagesFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/gallery/GalleryFragment.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/live/BatchDetails.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/login/LoginFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/ui/test/testseries/TestSeriesDetails.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/java/technited/minds/gurumantra/utils/Constants.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout-land/activity_play_n_comments.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/activity_play.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/activity_play_n_comments.xml">
           <value>
             <set />
           </value>
@@ -78,6 +168,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_live_class_type.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_login.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/fragment_notes.xml">
           <value>
             <set />
@@ -98,7 +198,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/layout/item_list_package.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/menu/bottom_nav_menu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/menu/side_nav_menu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/navigation/home_navigation.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../GuruMantra/app/src/main/res/values/themes.xml">
           <value>
             <set />
           </value>
@@ -173,6 +298,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/MainActivityViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/OnlineTestActivity.kt">
           <value>
             <set />
@@ -218,6 +348,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/model/JSONResponse.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/ui/ChaptersFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/techipinfotech/onlinestudy1/ui/ContentFragment.kt">
           <value>
             <set />
@@ -234,6 +374,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_play.xml">
           <value>
             <set />
           </value>
@@ -274,6 +419,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/settings.gradle">
           <value>
             <set />
           </value>

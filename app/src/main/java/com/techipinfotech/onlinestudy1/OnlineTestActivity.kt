@@ -5,9 +5,9 @@ import android.os.Handler
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -24,7 +24,7 @@ class OnlineTestActivity : AppCompatActivity(){
     private lateinit var binding: ActivityOnlineTestBinding
     private lateinit var processDialog: ProcessDialog
     private lateinit var navController: NavController
-    lateinit var viewModel: OnlineTestActivityViewModel
+    val viewModel: OnlineTestActivityViewModel by viewModels()
     private lateinit var userSharedPreferences: SharedPrefs
     private lateinit var testSharedPreferences: SharedPrefs
     private var backPressedOnce = false
@@ -36,7 +36,6 @@ class OnlineTestActivity : AppCompatActivity(){
             WindowManager.LayoutParams.FLAG_SECURE
         )
         binding = DataBindingUtil.setContentView(this, R.layout.activity_online_test)
-        viewModel = ViewModelProvider(this).get(OnlineTestActivityViewModel::class.java)
 
         processDialog = ProcessDialog(this)
         userSharedPreferences = SharedPrefs(this, "USER")

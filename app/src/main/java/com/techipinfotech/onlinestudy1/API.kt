@@ -1,7 +1,8 @@
 package com.techipinfotech.onlinestudy1
 
 enum class API(private val text: String) {
-    URL("http://drmitraapp.aicpnews.in/"),
+    URL("http://mma.brsofttech.in/"),
+    //URL("http://drmitraapp.aicpnews.in/"),
     //    URL("http://pragatiinstitute.co.in/app/"),
     //    URL("http://pragati.techipinfotech.com/"),
     //    URL("http://192.168.29.204:8m2/pragatiapp/"),
