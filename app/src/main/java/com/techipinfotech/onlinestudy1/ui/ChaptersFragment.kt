@@ -41,15 +41,19 @@ class ChaptersFragment : Fragment() {
         binding.chapters.layoutManager = LinearLayoutManager(context)
 //        binding.chapters.adapter = object : ChaptersAdapter(context, subjects.chapters) {}
 
+        binding.progressBar.visibility = View.GONE
         getChapters(subjects.subjectId!!)
 
     }
 
     private fun getChapters(subjectId:String) {
+        binding.progressBar.visibility = View.VISIBLE
         val getjsondata = HomeApi.getApiService().getSubjectJsonData(userSharedPreferences.get("student_id"),subjectId)
         getjsondata.enqueue(object : Callback<List<ChaptersItem?>?> {
             override fun onFailure(call: Call<List<ChaptersItem?>?>, t: Throwable) {
                 Log.d("asa", "onFailure: " + t.message)
+
+                binding.progressBar.visibility = View.GONE
             }
 
             override fun onResponse(
@@ -59,6 +63,7 @@ class ChaptersFragment : Fragment() {
                 val classes = response.body()
 //                viewModel.setJsonResponse(classes)
 
+                binding.progressBar.visibility = View.GONE
                 binding.chapters.adapter = object : ChaptersAdapter(context, classes) {}
 
             }

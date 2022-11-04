@@ -8,14 +8,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.techipinfotech.onlinestudy2"
         minSdkVersion 22
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 33
+        versionCode 10
+        versionName "2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

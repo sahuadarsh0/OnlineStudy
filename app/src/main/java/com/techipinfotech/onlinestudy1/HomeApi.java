@@ -3,6 +3,7 @@ package com.techipinfotech.onlinestudy1;
 import android.util.Log;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import com.techipinfotech.onlinestudy1.model.ChaptersItem;
 import com.techipinfotech.onlinestudy1.model.JSONResponse;
@@ -32,8 +33,9 @@ public class HomeApi {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(s -> Log.d("ASA", s));
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            builder.addInterceptor(httpLoggingInterceptor);
-
+            builder.addInterceptor(httpLoggingInterceptor)
+                    .readTimeout(60, TimeUnit.SECONDS)
+                    .connectTimeout(60, TimeUnit.SECONDS);
 //            create
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(base_url)
