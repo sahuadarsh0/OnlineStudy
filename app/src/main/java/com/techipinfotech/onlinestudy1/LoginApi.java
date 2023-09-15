@@ -2,7 +2,11 @@ package com.techipinfotech.onlinestudy1;
 
 import android.util.Log;
 
+import com.techipinfotech.onlinestudy1.model.JSONResponse;
 import com.techipinfotech.onlinestudy1.model.Received;
+
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -10,7 +14,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public class LoginApi {
 
@@ -44,12 +50,16 @@ public class LoginApi {
 
     public interface ApiService {
 
-        @FormUrlEncoded
-        @POST("loginAuthentication")
-        Call<Received> login(
-                @Field("user_name") String user_name,
-                @Field("password") String password
-        );
+//        @FormUrlEncoded
+//        @POST("loginAuthentication")
+//        Call<Received> login(
+//                @Field("user_name") String user_name,
+//                @Field("password") String password
+//        );
+
+        @GET("loginAuthentication/{user_name}/{password}")
+        Call<Received> login(@Path("user_name") String user_name,
+                             @Path("password") String password);
 
         @FormUrlEncoded
         @POST("changepassword")
