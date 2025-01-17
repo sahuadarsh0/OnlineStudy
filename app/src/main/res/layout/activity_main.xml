@@ -11,7 +11,7 @@
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha=".65"
+        android:alpha=".9"
         android:scaleType="fitEnd"
         android:src="@drawable/bck" />
 

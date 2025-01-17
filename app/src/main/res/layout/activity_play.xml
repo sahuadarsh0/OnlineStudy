@@ -17,7 +17,7 @@
         android:id="@+id/top"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="@color/black"
+        android:background="@color/transparent"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/bottom"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:background="@color/black"
+        android:background="@color/transparent"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,5 +40,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent=".1285" />
+
+    <View
+        android:id="@+id/more"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

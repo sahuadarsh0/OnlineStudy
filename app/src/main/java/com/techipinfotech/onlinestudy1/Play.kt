@@ -11,6 +11,10 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.techipinfotech.onlinestudy1.databinding.ActivityPlayBinding
 import com.techipinfotech.onlinestudy1.utils.SharedPrefs
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class Play : AppCompatActivity() {
@@ -70,8 +74,13 @@ class Play : AppCompatActivity() {
                         super.onStateChange(youTubePlayer, state)
 
                         if (state == PlayerConstants.PlayerState.ENDED) {
-                            Viewed.materialViewed(this@Play, userSharedPreferences.get("student_mobile"), materialId
+                            Viewed.materialViewed(
+                                this@Play, userSharedPreferences.get("student_mobile"), materialId
                             )
+                            CoroutineScope(Dispatchers.Main).launch {
+                                delay(1000)
+                                finish()
+                            }
                         }
 
                     }
