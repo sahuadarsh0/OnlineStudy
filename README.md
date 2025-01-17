@@ -30,10 +30,6 @@
 ## Upcoming Updates
 Future updates will focus on refining the video section, adding interactive features, and enhancing overall user security.
 
----
-
-## Developer Information
-For queries, feedback, or issues, contact the developer team. Contributions to the project are welcome via [GitHub Issues](https://github.com/yourusername/OnlineStudyTest/issues).
-
+--
 **Version:** 3.0  
 **Platform:** Android  
