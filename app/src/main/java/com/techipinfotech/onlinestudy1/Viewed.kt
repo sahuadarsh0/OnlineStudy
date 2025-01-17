@@ -2,11 +2,11 @@ package com.techipinfotech.onlinestudy1
 
 import android.content.Context
 import android.util.Log
+import com.techipinfotech.onlinestudy1.model.Received
+import com.techipinfotech.onlinestudy1.utils.ProcessDialog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import technited.minds.androidutils.ProcessDialog
-import com.techipinfotech.onlinestudy1.model.Received
 
 object Viewed {
     private lateinit var processDialog: ProcessDialog

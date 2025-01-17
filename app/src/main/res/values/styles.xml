@@ -58,15 +58,15 @@
     </style>
 
     <style name="TextBlack.elarge">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
     </style>
 
     <style name="TextGrey.elarge">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
     </style>
 
     <style name="TextWhite.elarge">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
     </style>
 
     <style name="TextWhite.large">

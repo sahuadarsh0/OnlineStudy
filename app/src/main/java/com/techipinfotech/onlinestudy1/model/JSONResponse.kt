@@ -40,11 +40,24 @@ data class SubjectsItem(
     @field:SerializedName("subject_image")
     val subjectImage: String? = null,
 
-    @field:SerializedName("chapters")
-    val chapters: List<ChaptersItem?>? = null,
+//    @field:SerializedName("chapters")
+//    val chapters: List<ChaptersItem?>? = null,
 
     @field:SerializedName("subject_name")
     val subjectName: String? = null
+) : Parcelable
+
+@Parcelize
+data class ChaptersItem(
+
+    @field:SerializedName("topics")
+    val topics: List<TopicsItem?>? = null,
+
+    @field:SerializedName("chapter_name")
+    val chapterName: String? = null,
+
+    @field:SerializedName("chapter_id")
+    val chapterId: String? = null
 ) : Parcelable
 
 @Parcelize
@@ -77,17 +90,4 @@ data class ContentItem(
 
     @field:SerializedName("url")
     val url: String? = null
-) : Parcelable
-
-@Parcelize
-data class ChaptersItem(
-
-    @field:SerializedName("topics")
-    val topics: List<TopicsItem?>? = null,
-
-    @field:SerializedName("chapter_name")
-    val chapterName: String? = null,
-
-    @field:SerializedName("chapter_id")
-    val chapterId: String? = null
 ) : Parcelable

@@ -3,13 +3,16 @@ package com.techipinfotech.onlinestudy1.ui
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.techipinfotech.onlinestudy1.API
@@ -18,11 +21,11 @@ import com.techipinfotech.onlinestudy1.LoginApi
 import com.techipinfotech.onlinestudy1.R
 import com.techipinfotech.onlinestudy1.databinding.FragmentProfileBinding
 import com.techipinfotech.onlinestudy1.model.Received
+import com.techipinfotech.onlinestudy1.utils.ProcessDialog
+import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import technited.minds.androidutils.ProcessDialog
-import technited.minds.androidutils.SharedPrefs
 
 
 class ProfileFragment : Fragment() {
@@ -38,9 +41,8 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
-
+    ): View {
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
         processDialog = ProcessDialog(context)
         userSharedPreferences = SharedPrefs(context, "USER")
 

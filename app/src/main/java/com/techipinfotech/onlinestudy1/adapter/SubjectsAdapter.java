@@ -13,17 +13,15 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-
-
 import com.bumptech.glide.Glide;
 import com.techipinfotech.onlinestudy1.API;
-import com.techipinfotech.onlinestudy1.ui.HomeFragmentDirections;
 import com.techipinfotech.onlinestudy1.R;
 import com.techipinfotech.onlinestudy1.model.SubjectsItem;
 import com.techipinfotech.onlinestudy1.ui.SubjectsFragmentDirections;
+
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.SubjectsViewHolder> {
     Context context;

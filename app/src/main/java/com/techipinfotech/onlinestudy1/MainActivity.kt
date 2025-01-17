@@ -6,23 +6,20 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.rezwan.knetworklib.KNetwork
-import com.rezwan.knetworklib.KNetwork.bind
 import com.techipinfotech.onlinestudy1.databinding.ActivityMainBinding
 import com.techipinfotech.onlinestudy1.model.JSONResponse
+import com.techipinfotech.onlinestudy1.utils.MD.alert
+import com.techipinfotech.onlinestudy1.utils.ProcessDialog
+import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import technited.minds.androidutils.MD.alert
-import technited.minds.androidutils.ProcessDialog
-import technited.minds.androidutils.SharedPrefs
 
-class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var processDialog: ProcessDialog
@@ -37,13 +34,11 @@ class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
             WindowManager.LayoutParams.FLAG_SECURE,
             WindowManager.LayoutParams.FLAG_SECURE
         )
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         processDialog = ProcessDialog(this)
         processDialog.show()
-        bind(this, lifecycle)
-            .showKNDialog(false)
-            .setConnectivityListener(this)
 
         userSharedPreferences = SharedPrefs(this, "USER")
 
@@ -81,7 +76,7 @@ class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
                 viewModel.setJsonResponse(classes)
                 if (classes?.get(0)?.notifications?.message != null
                     || classes?.get(0)?.notifications?.message != "null"
-                    || classes?.get(0)?.notifications?.message != ""
+                    || classes.get(0)?.notifications?.message != ""
                 ) {
                     alert(
                         this@MainActivity,
@@ -101,18 +96,8 @@ class MainActivity : AppCompatActivity(), KNetwork.OnNetWorkConnectivityListener
         binding.bottomNavigation.let { NavigationUI.setupWithNavController(it, navController) }
     }
 
-    override fun onNetConnected() {
-    }
-
-    override fun onNetDisConnected() {
-    }
-
-    override fun onNetError(msg: String?) {
-    }
-
-
     override fun onBackPressed() {
-        if (navController.graph.startDestination == navController.currentDestination!!.id) {
+        if (navController.graph.startDestinationId == navController.currentDestination!!.id) {
             if (backPressedOnce) {
                 super.onBackPressed()
             }

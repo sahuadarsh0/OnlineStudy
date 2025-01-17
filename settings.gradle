@@ -1,3 +1,0 @@
-rootProject.name = "OnlineStudy1"
-include ':app'
-include ':android-utils'

@@ -1,13 +1,13 @@
 package com.techipinfotech.onlinestudy1.ui
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.techipinfotech.onlinestudy1.BuildConfig
 import com.techipinfotech.onlinestudy1.R
@@ -17,7 +17,7 @@ class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
 
         val view: View = inflater.inflate(
@@ -37,11 +37,11 @@ class MenuFragment : Fragment() {
             try {
                 val whatsAppRoot = "http://api.whatsapp.com/"
                 val number =
-                    "send?phone=+919644200007" //here the mobile number with its international prefix
-                val text = "&text=Hi Pragati Institute support team !!! I need help in "
+                    "send?phone=+918770162862" //here the mobile number with its international prefix
+                val text = "&text=Hi MMA support team !!! I need help in "
                 val uri = whatsAppRoot + number + text
                 val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(uri)
+                intent.data = uri.toUri()
                 startActivity(intent)
             } catch (e: Exception) {
                 Toast.makeText(context,
@@ -67,7 +67,7 @@ class MenuFragment : Fragment() {
 
         techip.setOnClickListener {
             val browserIntent =
-                Intent(Intent.ACTION_VIEW, Uri.parse("http://techipinfotech.com/"))
+                Intent(Intent.ACTION_VIEW, "http://techipinfotech.com/".toUri())
             startActivity(browserIntent)
         }
 

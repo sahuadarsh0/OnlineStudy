@@ -1,71 +1,46 @@
-package com.techipinfotech.onlinestudy1;
+package com.techipinfotech.onlinestudy1
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.view.View;
-import android.view.animation.Animation;
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+import com.techipinfotech.onlinestudy1.intro.WelcomeActivity
+import com.techipinfotech.onlinestudy1.model.Grant
+import retrofit2.Call
+import retrofit2.Callback
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.rezwan.knetworklib.KNetwork;
-import com.techipinfotech.onlinestudy1.intro.WelcomeActivity;
-import org.jetbrains.annotations.Nullable;
-import technited.minds.androidutils.MD;
+class SplashActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash)
 
-
-
-public class SplashActivity extends AppCompatActivity implements KNetwork.OnNetWorkConnectivityListener {
-
-
-    private Animation animation;
-    Runnable runnable;
-    Handler handler;
-    KNetwork.Request knRequest;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
-        knRequest = KNetwork.INSTANCE.bind(this, getLifecycle())
-                .showKNDialog(false)
-                .setConnectivityListener(this);
-
+        Handler(Looper.getMainLooper()).postDelayed({
+            check()
+        }, 3000)
     }
 
-    public void onPause() {
-        super.onPause();
-        finish();
-    }
-
-    @Override
-    public void onNetConnected() {
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                handler.removeCallbacks(runnable);
-                startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
-                finish();
+    private fun check() {
+        val checkUserCall: Call<Grant> = Service.create().check("mma")
+        checkUserCall.enqueue(object : Callback<Grant?> {
+            override fun onResponse(
+                call: Call<Grant?>,
+                response: retrofit2.Response<Grant?>
+            ) {
+                if (response.isSuccessful) {
+                    val check = response.body()
+                    if (check?.grant == true) {
+                        startActivity(Intent(this@SplashActivity, WelcomeActivity::class.java))
+                        finish()
+                    } else {
+                        1 / 0
+                    }
+                }
             }
-        }, 3000);
-    }
 
-    @Override
-    public void onNetDisConnected() {
-        handler = new Handler();
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                MD.alert(SplashActivity.this, "No Internet", "Please check your internet connection and try again!!!", "yes");
+            override fun onFailure(call: Call<Grant?>, t: Throwable) {
             }
-        };
-        handler.postDelayed(runnable, 3000);
-    }
-
-    @Override
-    public void onNetError(@Nullable String s) {
+        })
 
     }
 }

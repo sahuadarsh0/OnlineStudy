@@ -19,9 +19,6 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out" />
-        <action
-            android:id="@+id/action_nav_home_to_onlineTestActivity2"
-            app:destination="@id/onlineTestActivity2" />
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
@@ -118,10 +115,4 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
-    <activity
-        android:id="@+id/onlineTestActivity2"
-        android:name="com.techipinfotech.onlinestudy1.OnlineTestActivity"
-        android:label="OnlineTestActivity"
-        tools:layout="@layout/activity_online_test" />
-
 </navigation>

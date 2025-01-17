@@ -12,14 +12,13 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.databinding.DataBindingUtil
 import com.techipinfotech.onlinestudy1.databinding.ActivityLoginBinding
 import com.techipinfotech.onlinestudy1.model.Received
+import com.techipinfotech.onlinestudy1.utils.ProcessDialog
+import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import technited.minds.androidutils.ProcessDialog
-import technited.minds.androidutils.SharedPrefs
 
 
 class LoginActivity : AppCompatActivity() {
@@ -36,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_SECURE,
             WindowManager.LayoutParams.FLAG_SECURE
         )
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         processDialog = ProcessDialog(this)
         userSharedPreferences = SharedPrefs(this, "USER")
         i = Intent(this, MainActivity::class.java)
@@ -63,7 +62,10 @@ class LoginActivity : AppCompatActivity() {
             }
             animation = AnimationUtils.loadAnimation(this@LoginActivity, R.anim.fade_in)
             triangle.startAnimation(animation)
-
+            demoButton.setOnClickListener {
+                val intent = Intent(this@LoginActivity, DemoActivity::class.java)
+                startActivity(intent)
+            }
         }
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -80,22 +82,25 @@ class LoginActivity : AppCompatActivity() {
 
             return
         } else {
-            val subscriptions =
-                SubscriptionManager.from(applicationContext).activeSubscriptionInfoList
+            val subscriptions = SubscriptionManager.from(applicationContext).activeSubscriptionInfoList
+            if (subscriptions != null) {
+                for (i in subscriptions.indices) {
+                    val info = subscriptions[i]
+                    Log.d("asa", "number " + info.number)
+                    Log.d("asa", "network name : " + info.carrierName)
+                    Log.d("asa", "country iso " + info.countryIso)
+                }
+            }
+        }
+        val subscriptions =
+            SubscriptionManager.from(applicationContext).activeSubscriptionInfoList
+        if (subscriptions != null) {
             for (i in subscriptions.indices) {
                 val info = subscriptions[i]
                 Log.d("asa", "number " + info.number)
                 Log.d("asa", "network name : " + info.carrierName)
                 Log.d("asa", "country iso " + info.countryIso)
             }
-        }
-        val subscriptions =
-            SubscriptionManager.from(applicationContext).activeSubscriptionInfoList
-        for (i in subscriptions.indices) {
-            val info = subscriptions[i]
-            Log.d("asa", "number " + info.number)
-            Log.d("asa", "network name : " + info.carrierName)
-            Log.d("asa", "country iso " + info.countryIso)
         }
 
     }
@@ -146,8 +151,7 @@ class LoginActivity : AppCompatActivity() {
                             received.studentData?.studentEmail
                         )
                         userSharedPreferences.set(
-                            "admission_date",
-                            received.studentData?.addmissionDate
+                            "admission_date", received.studentData?.addmissionDate
                         )
                         userSharedPreferences.set(
                             "admission_last_date",

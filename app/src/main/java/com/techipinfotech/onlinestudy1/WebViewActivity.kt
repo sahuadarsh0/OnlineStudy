@@ -2,7 +2,6 @@ package com.techipinfotech.onlinestudy1
 
 import android.Manifest
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
@@ -13,14 +12,19 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.Group
+import androidx.core.net.toUri
 import androidx.navigation.navArgs
+import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import okhttp3.ResponseBody
 import pub.devrel.easypermissions.EasyPermissions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import technited.minds.androidutils.SharedPrefs
-import java.io.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 
 
 class WebViewActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
@@ -78,7 +82,7 @@ class WebViewActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks
 //                download()
                 buttons.visibility = View.GONE
 
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                val browserIntent = Intent(Intent.ACTION_VIEW, url.toUri())
                 startActivity(browserIntent)
                 Viewed.materialViewed(
                     this@WebViewActivity,
