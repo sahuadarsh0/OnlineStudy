@@ -1,6 +1,5 @@
 package com.techipinfotech.onlinestudy1.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,23 +11,22 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techipinfotech.onlinestudy1.R;
+import com.techipinfotech.onlinestudy1.model.ChaptersItem;
+import com.techipinfotech.onlinestudy1.ui.ChaptersFragmentDirections;
+
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-
-import com.techipinfotech.onlinestudy1.ui.ChaptersFragmentDirections;
-import com.techipinfotech.onlinestudy1.R;
-import com.techipinfotech.onlinestudy1.model.ChaptersItem;
-
 public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.ChaptersViewHolder> {
-    Context context;
     List<ChaptersItem> chapters;
+    String subjectId;
 
-    public ChaptersAdapter(@Nullable Context context, @Nullable List<ChaptersItem> chapters) {
+    public ChaptersAdapter(@Nullable List<ChaptersItem> chapters, String subjectId) {
 
-        this.context = context;
         this.chapters = chapters;
+        this.subjectId = subjectId;
         setHasStableIds(true);
     }
 
@@ -48,14 +46,9 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
         holder.chapter_name.setText(chapter.getChapterName());
         holder.chapter_id.setText(chapter.getChapterId());
 
-        holder.chapter_item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavDirections action = ChaptersFragmentDirections.actionChaptersFragmentToTopicsFragment(chapter);
-                Navigation.findNavController(v).navigate(action);
-
-
-            }
+        holder.chapter_item.setOnClickListener(v -> {
+            NavDirections action = ChaptersFragmentDirections.actionChaptersFragmentToTopicsFragment(chapter, subjectId);
+            Navigation.findNavController(v).navigate(action);
         });
 
     }

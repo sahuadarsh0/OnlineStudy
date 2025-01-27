@@ -13,11 +13,11 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
-import com.techipinfotech.onlinestudy1.ui.ContentFragmentDirections;
 import com.techipinfotech.onlinestudy1.R;
 import com.techipinfotech.onlinestudy1.model.ContentItem;
+import com.techipinfotech.onlinestudy1.ui.ContentFragmentDirections;
+
+import java.util.List;
 
 public class ContentsAdapter extends RecyclerView.Adapter<ContentsAdapter.ContentsViewHolder> {
     Context context;
@@ -44,7 +44,6 @@ public class ContentsAdapter extends RecyclerView.Adapter<ContentsAdapter.Conten
         holder.material_id.setText(content.getMaterialId());
         NavDirections action1, action2;
         action1 = ContentFragmentDirections.actionContentFragmentToPlay(content.getUrl(), content.getMaterialId());
-
         action2 = ContentFragmentDirections.actionContentFragmentToWebViewActivity(content.getUrl(),content.getMaterialId());
 
         holder.content_item.setOnClickListener(v -> {

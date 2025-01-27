@@ -32,18 +32,6 @@
         app:layout_constraintVertical_bias="0.07999998"
         tools:text="Chapter" />
 
-    <TextView
-        android:id="@+id/chapter_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="id" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/topics"
@@ -62,15 +50,25 @@
         style="@style/TextGrey.large"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:visibility="visible"
         android:gravity="center"
+        android:text="@string/no_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        android:text="@string/no_content" />
+        tools:visibility="visible" />
 
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -60,16 +60,16 @@ class MainActivity : AppCompatActivity() {
     private fun getjsondata() {
 
         val getjsondata =
-            HomeApi.getApiService().getjsondata(userSharedPreferences.get("student_mobile"))
-        getjsondata.enqueue(object : Callback<List<JSONResponse?>?> {
-            override fun onFailure(call: Call<List<JSONResponse?>?>, t: Throwable) {
+            HomeApi.getApiService().getJsonData(userSharedPreferences.get("student_mobile"))
+        getjsondata.enqueue(object : Callback<List<JSONResponse>?> {
+            override fun onFailure(call: Call<List<JSONResponse>?>, t: Throwable) {
                 processDialog.dismiss()
                 Log.d("asa", "onFailure: " + t.message)
             }
 
             override fun onResponse(
-                call: Call<List<JSONResponse?>?>,
-                response: Response<List<JSONResponse?>?>
+                call: Call<List<JSONResponse>?>,
+                response: Response<List<JSONResponse>?>
             ) {
                 val classes = response.body()
                 processDialog.dismiss()

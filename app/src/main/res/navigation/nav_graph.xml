@@ -61,6 +61,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="subjectId"
+            app:argType="string" />
     </fragment>
     <activity
         android:id="@+id/play"
@@ -100,6 +103,12 @@
         <argument
             android:name="topics"
             app:argType="com.techipinfotech.onlinestudy1.model.TopicsItem" />
+        <argument
+            android:name="subjectId"
+            app:argType="string" />
+        <argument
+            android:name="chapterId"
+            app:argType="string" />
     </fragment>
 
     <fragment

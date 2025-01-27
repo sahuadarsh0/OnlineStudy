@@ -12,7 +12,6 @@ import com.techipinfotech.onlinestudy1.HomeApi
 import com.techipinfotech.onlinestudy1.adapter.ChaptersAdapter
 import com.techipinfotech.onlinestudy1.databinding.FragmentChaptersBinding
 import com.techipinfotech.onlinestudy1.model.ChaptersItem
-import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,9 +19,12 @@ import retrofit2.Response
 class ChaptersFragment : Fragment() {
 
 
-    private lateinit var userSharedPreferences: SharedPrefs
     private lateinit var binding: FragmentChaptersBinding
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentChaptersBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -31,7 +33,6 @@ class ChaptersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val args: ChaptersFragmentArgs by navArgs()
-        userSharedPreferences = SharedPrefs(requireContext(), "USER")
         val subjects = args.subjects
         binding.subjectName.text = subjects.subjectName
         binding.subjectId.text = subjects.subjectId
@@ -43,27 +44,25 @@ class ChaptersFragment : Fragment() {
 
     private fun getChapters(subjectId: String) {
         binding.progressBar.visibility = View.VISIBLE
-        val getjsondata = HomeApi.getApiService().getSubjectJsonData(userSharedPreferences.get("student_id"), subjectId)
-        getjsondata.enqueue(object : Callback<List<ChaptersItem?>?> {
-            override fun onFailure(call: Call<List<ChaptersItem?>?>, t: Throwable) {
+        val getJsonData = HomeApi.getApiService().getChapterJsonData(subjectId)
+        getJsonData.enqueue(object : Callback<List<ChaptersItem>?> {
+            override fun onFailure(call: Call<List<ChaptersItem>?>, t: Throwable) {
                 Log.d("asa", "onFailure: " + t.message)
-
                 binding.progressBar.visibility = View.GONE
             }
 
             override fun onResponse(
-                call: Call<List<ChaptersItem?>?>,
-                response: Response<List<ChaptersItem?>?>
+                call: Call<List<ChaptersItem>?>,
+                response: Response<List<ChaptersItem>?>
             ) {
                 val classes = response.body()
-//                viewModel.setJsonResponse(classes)
 
                 binding.progressBar.visibility = View.GONE
                 if (classes.isNullOrEmpty()) {
                     binding.chapters.visibility = View.GONE
                     binding.noContent.visibility = View.VISIBLE
                 } else {
-                    binding.chapters.adapter = object : ChaptersAdapter(context, classes) {}
+                    binding.chapters.adapter = ChaptersAdapter(classes, subjectId)
                 }
             }
         })

@@ -50,7 +50,7 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.Subjec
         holder.subject_name.setText(subject.getSubjectName());
         holder.subject_id.setText(subject.getSubjectId());
 
-        String url = API.SUBJECT.toString() + subject.getSubjectImage();
+        String url = API.SUBJECT + subject.getSubjectImage();
         Glide
                 .with(context)
                 .load(url)
@@ -58,13 +58,10 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.Subjec
                 .placeholder(R.drawable.ic_triangle)
                 .into(holder.subject_image);
 
-        holder.subject_item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavDirections action = SubjectsFragmentDirections.actionSubjectsFragmentToChaptersFragment(subject);
-                Navigation.findNavController(v).navigate(action);
+        holder.subject_item.setOnClickListener(v -> {
+            NavDirections action = SubjectsFragmentDirections.actionSubjectsFragmentToChaptersFragment(subject);
+            Navigation.findNavController(v).navigate(action);
 
-            }
         });
     }
 

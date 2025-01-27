@@ -80,7 +80,5 @@ dependencies {
     implementation (libs.dialogs.core)
     implementation (libs.dialogs.input)
     implementation (libs.lottie)
-
     implementation (libs.player.core)
-    implementation("pub.devrel:easypermissions:3.0.0")
 }

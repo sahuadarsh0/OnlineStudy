@@ -40,9 +40,6 @@ data class SubjectsItem(
     @field:SerializedName("subject_image")
     val subjectImage: String? = null,
 
-//    @field:SerializedName("chapters")
-//    val chapters: List<ChaptersItem?>? = null,
-
     @field:SerializedName("subject_name")
     val subjectName: String? = null
 ) : Parcelable

@@ -24,7 +24,6 @@ class SubjectsFragment : Fragment() {
     ): View {
         binding = FragmentSubjectsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity())[MainActivityViewModel::class.java]
-
         return binding.root
     }
 
@@ -39,8 +38,7 @@ class SubjectsFragment : Fragment() {
                 binding.subjects.visibility = View.GONE
                 binding.noContent.visibility = View.VISIBLE
             } else {
-                binding.subjects.adapter =
-                    SubjectsAdapter(context, viewModel.jsonResponse.value?.get(0)?.subjects)
+                binding.subjects.adapter = SubjectsAdapter(context, viewModel.jsonResponse.value?.get(0)?.subjects)
                 binding.className.text = viewModel.jsonResponse.value?.get(0)?.className
             }
         }

@@ -1,6 +1,5 @@
 package com.techipinfotech.onlinestudy1.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +11,22 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
-
 import com.techipinfotech.onlinestudy1.R;
-import com.techipinfotech.onlinestudy1.ui.TopicsFragmentDirections;
 import com.techipinfotech.onlinestudy1.model.TopicsItem;
+import com.techipinfotech.onlinestudy1.ui.TopicsFragmentDirections;
+
+import java.util.List;
 
 public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsViewHolder> {
 
-    private Context context;
     private List<TopicsItem> topics;
+    private String chapterId;
+    private String subjectId;
 
-    public TopicsAdapter(Context context, List<TopicsItem> topics) {
-        this.context = context;
+    public TopicsAdapter(List<TopicsItem> topics, String chapterId, String subjectId) {
         this.topics = topics;
+        this.chapterId = chapterId;
+        this.subjectId = subjectId;
         setHasStableIds(true);
     }
 
@@ -48,7 +48,7 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
 
         holder.topic_item.setOnClickListener(v -> {
 
-                NavDirections action = TopicsFragmentDirections.actionTopicsFragmentToContentFragment(topic);
+                NavDirections action = TopicsFragmentDirections.actionTopicsFragmentToContentFragment(topic,chapterId,subjectId);
                 Navigation.findNavController(v).navigate(action);
 
         });
