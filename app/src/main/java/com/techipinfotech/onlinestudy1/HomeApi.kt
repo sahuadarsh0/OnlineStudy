@@ -54,15 +54,17 @@ object HomeApi {
 //            @Path("subject_id") subjectId: String
 //        ): Call<List<ChaptersItem>>
 
-        @GET("getchapter/{subject_id}")
+        @GET("getchapter/{subject_id}/{student_id}")
         fun getChapterJsonData(
-            @Path("subject_id") subjectId: String
+            @Path("subject_id") subjectId: String,
+            @Path("student_id") studentId: String
         ): Call<List<ChaptersItem>>
 
-        @GET("gettopic/{subject_id}/{chapter_id}")
+        @GET("gettopic/{subject_id}/{chapter_id}/{student_id}")
         fun getTopicJsonData(
             @Path("subject_id") subjectId: String,
             @Path("chapter_id") chapterId: String,
+            @Path("student_id") studentId: String
         ): Call<List<TopicsItem>>
 
         @GET("getvideo/{subject_id}/{chapter_id}/{topic_id}/{student_id}")

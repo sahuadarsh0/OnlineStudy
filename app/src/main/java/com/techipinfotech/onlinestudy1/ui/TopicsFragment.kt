@@ -12,12 +12,14 @@ import com.techipinfotech.onlinestudy1.HomeApi
 import com.techipinfotech.onlinestudy1.adapter.TopicsAdapter
 import com.techipinfotech.onlinestudy1.databinding.FragmentTopicsBinding
 import com.techipinfotech.onlinestudy1.model.TopicsItem
+import com.techipinfotech.onlinestudy1.utils.SharedPrefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class TopicsFragment : Fragment() {
 
+    private lateinit var userSharedPreferences: SharedPrefs
     private lateinit var binding: FragmentTopicsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +32,7 @@ class TopicsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        userSharedPreferences = SharedPrefs(requireContext(), "USER")
         val args: TopicsFragmentArgs by navArgs()
         val chapters = args.chapters
         binding.chapterName.text = chapters.chapterName
@@ -41,7 +44,7 @@ class TopicsFragment : Fragment() {
 
     private fun getTopics(chapterId: String, subjectId: String) {
         binding.progressBar.visibility = View.VISIBLE
-        val getJsonData = HomeApi.getApiService().getTopicJsonData(subjectId, chapterId)
+        val getJsonData = HomeApi.getApiService().getTopicJsonData(subjectId, chapterId, userSharedPreferences.get("student_id"))
 
         getJsonData.enqueue(object : Callback<List<TopicsItem>> {
             override fun onFailure(call: Call<List<TopicsItem>>, t: Throwable) {
